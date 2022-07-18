@@ -81,7 +81,7 @@ def index():
 @app.route("/protected_area")
 @login_is_required
 def protected_area():
-    return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a> <br/> <a href='/create'><button>create</button></a>"
+    return render_template("protected_area")
 
 
 ##
