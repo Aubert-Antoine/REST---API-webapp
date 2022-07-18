@@ -81,7 +81,7 @@ def index():
 @app.route("/protected_area")
 @login_is_required
 def protected_area():
-    return render_template("protected_area")
+    return render_template("protected_area.html", name=session['name'])
 
 
 ##
@@ -89,6 +89,7 @@ def protected_area():
 ##
 
 @app.route("/create")
+@login_is_required
 def create():
     return render_template("create.html")
 
