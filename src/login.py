@@ -1,8 +1,9 @@
 import os
 import pathlib
+from unicodedata import name
 
 import requests
-from flask import Flask, session, abort, redirect, request
+from flask import Flask, session, abort, redirect, request, render_template
 from google.oauth2 import id_token
 from google_auth_oauthlib.flow import Flow
 from pip._vendor import cachecontrol
@@ -80,8 +81,35 @@ def index():
 @app.route("/protected_area")
 @login_is_required
 def protected_area():
-    return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"
+    return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a> <br/> <a href='/create'><button>create</button></a>"
 
+
+##
+# CRUD fonction 
+##
+
+@app.route("/create")
+def create():
+    return render_template("create.html")
+
+
+@app.route("/read")
+def read():
+    return render_template("read.html")
+
+@app.route("/update")
+def update():
+    return render_template("update.html")
+
+
+@app.route("/delete")
+def delete():
+    return render_template("delete.html")
+
+
+##
+# run 
+##
 
 if __name__ == "__main__":
     app.run(debug=True)
