@@ -2,13 +2,15 @@
 *Notice that is an **in progress** repository*
 
 ## info : 
-This webapp will be able to CRUDing a SQLite data base via a web page. The access must be limited only with trust peoples, therefore an OAut will be deployed. 
+This webapp will be able to CRUDing a SQLite data base via a web page. The access must be limited only with trust peoples, therefore an **OAut2.0** will be deployed. 
 The curent frame-work is Flask. The data are access with SQLAlchemy, and web pages made in html / css / JS.
 Their data type are meusurement of monitoring speakers. 
 
 ## Code / General folders structure : 
-> `src` : all code
+> `src` : all code 
+> <br>
 > `data` : all resources
+> <br>
 > `.github/workflows` : all .yml wich optimise devOp & CI
 
 
