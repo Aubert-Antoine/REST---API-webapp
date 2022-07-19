@@ -1,0 +1,18 @@
+{
+    "people" : {
+        "dev" : {
+            "Antoine" : {
+                "first name" : "Antoine",
+                "last name" : "Aubert",
+                "google_id" : 118244919464494232513
+            },
+            "Pierre" : {
+                "first name" : "Antoine",
+                "last name" : "Aubert",
+                "google_id" : 0
+            }
+            
+        },
+        "other" : {}
+    }
+}

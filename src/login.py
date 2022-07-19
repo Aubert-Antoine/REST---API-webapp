@@ -1,6 +1,7 @@
 import os
 import pathlib
 from unicodedata import name
+from xmlrpc.client import boolean
 
 import requests
 from flask import Flask, session, abort, redirect, request, render_template
@@ -70,18 +71,14 @@ def callback():
     session["google_id"] = id_info.get("sub")
     session["name"] = id_info.get("name")
 
-    print("\n")
-    print("\n")
-    print(type(session))
-    print(session.keys())
-    print(type(session["google_id"]))
-    print("\n")
-    print("\n")
+    # on regarde si le google id est dans la database
 
     if(session["google_id"] == "118244919464494232513"):
         return redirect("/protected_area")
     else : 
         return redirect("/OAuth_prb")
+
+def isAllow(google_id : str) -> boolean :
 
 
 @app.route("/OAuth_prb")
