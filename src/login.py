@@ -26,6 +26,11 @@ flow = Flow.from_client_secrets_file(
 
 def login_is_required(function):
     def wrapper(*args, **kwargs):
+
+        # print('\n')
+        # for id in session["goole_id"]:
+        # print(id)
+
         if "google_id" not in session:
             return abort(401)  # Authorization required
         else:
@@ -64,8 +69,24 @@ def callback():
 
     session["google_id"] = id_info.get("sub")
     session["name"] = id_info.get("name")
-    return redirect("/protected_area")
 
+    print("\n")
+    print("\n")
+    print(type(session))
+    print(session.keys())
+    print(type(session["google_id"]))
+    print("\n")
+    print("\n")
+
+    if(session["google_id"] == "118244919464494232513"):
+        return redirect("/protected_area")
+    else : 
+        return redirect("/OAuth_prb")
+
+
+@app.route("/OAuth_prb")
+def OAuth_prb():
+    return render_template("OAuth_prb.html", keys=session.keys(), google_id = session["google_id"], state=session["state"], name=session["name"], type=type(session["google_id"]))
 
 @app.route("/logout")
 def logout():
@@ -89,7 +110,7 @@ def protected_area():
 ##
 
 @app.route("/create")
-@login_is_required
+# @login_is_required
 def create():
     return render_template("create.html")
 
