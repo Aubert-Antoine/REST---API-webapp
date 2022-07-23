@@ -1,0 +1,16 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@500&display=swap');
+
+
+h1 {
+    color: darkblue;
+    text-decoration-color: rgb(127, 138, 30);
+    text-shadow: 1px 0 0 rgba(139, 0, 139, 0.377);
+    font-family: 'Expletus Sans', cursive;
+    text-align: center;
+}
+
+body{
+    background: url(./assets/imgDJ.jpg)
+}

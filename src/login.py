@@ -79,7 +79,7 @@ def callback():
         return redirect("/OAuth_prb")
 
 def isAllow(google_id : str) -> boolean :
-
+    return
 
 @app.route("/OAuth_prb")
 def OAuth_prb():

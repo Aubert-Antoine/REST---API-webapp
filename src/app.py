@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 from requests import delete
+from app import db
 import sqlalchemy
 
 
@@ -90,4 +91,4 @@ api.add_resource(DeleteEmployee, '/delete/<int:id>')
 
 if __name__ == '__name__':
     app.run(debug=True)
-                
+    db.create_all()
